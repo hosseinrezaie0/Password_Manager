@@ -1,12 +1,19 @@
 from tkinter import *
+#-----------------------Colors--------------------------#
+BACKGROUND_COLOR = "#ADC4CE"
+BUTTON_COLOR = "#EEE0C9"
+
+
 #-----------------------UI design-----------------------#
 window = Tk()
 window.title("Password Manager")
-window.config(padx=50, pady=50)
+window.config(padx=50, pady=50,bg=BACKGROUND_COLOR)
 
-canavs = Canvas(width=200,height=200,highlightthickness=0,)
+canavs = Canvas(width=200,height=200,highlightthickness=0,bg=BACKGROUND_COLOR)
 photo = PhotoImage(file="logo.png")
 canavs.create_image(100,100,image=photo)
+
+
 canavs.grid(row=0,column=1)
 
 #Web
