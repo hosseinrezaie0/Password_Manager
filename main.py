@@ -39,8 +39,11 @@ password_entry.grid(row=3,column=1)
 password_btn = Button(text="Generate Password",bg=BUTTON_COLOR,bd=1)
 password_btn.grid(row=3,column=2)
 
-add_btn =Button(text="Add", bg=BUTTON_COLOR, width=36,bd=1)
-add_btn.grid(row=4,column=1,columnspan=2)
+add_btn =Button(text="Add", bg=BUTTON_COLOR, width=16,bd=1)
+add_btn.grid(row=4,column=1,sticky="we")
+
+erase_btn = Button(text="Erase", bg=BUTTON_COLOR,width=15,bd=1)
+erase_btn.grid(row=4,column=2)
 
 
 window.mainloop()
