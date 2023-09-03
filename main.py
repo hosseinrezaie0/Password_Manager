@@ -19,8 +19,10 @@ canavs.grid(row=0,column=1)
 #Web
 web_label = Label(text="Website:",padx=20,pady=20,bg=BACKGROUND_COLOR)
 web_label.grid(row=1,column=0)
-web_entry = Entry(width=36)
-web_entry.grid(row=1,column=1, columnspan=2)
+web_entry = Entry(width=19)
+web_entry.grid(row=1,column=1)
+search_btn = Button(text="Search", bg=BUTTON_COLOR,highlightthickness=0,bd=1,width=16)
+search_btn.grid(row=1,column=2)
 
 #Username
 email_label = Label(text="Email/Username:", padx=20,pady=20,bg=BACKGROUND_COLOR)
