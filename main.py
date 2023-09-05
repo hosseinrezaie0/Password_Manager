@@ -1,20 +1,33 @@
 from tkinter import *
 import pandas
+from tkinter import messagebox
+import pyperclip
+import random
 #-----------------------COLORS--------------------------#
 BACKGROUND_COLOR = "#ADC4CE"
 BUTTON_COLOR = "#EEE0C9"
+
 #-----------------------SEARCH FUNCTION-----------------------#
 def search():
     web = web_entry.get()
     email = email_entry.get()
     file = pandas.read_csv("data.csv")
     file_data_frame = pandas.DataFrame(file)
+    web_list = file.website.to_list()
+    email_list = file.email.to_list()
+
 
     for (index,row) in file_data_frame.iterrows():
         if row.website == web and row.email == email:
             password_entry.insert(0,row.password)
-        
-
+            pyperclip.copy(text=row.password)
+    if web not in web_list:
+        messagebox.showerror(title="Error", message="Not Found, Invalid website")
+        web_entry.delete(0,END)
+        email_entry.delete(0,END)
+    elif email not in email_list:
+        messagebox.showerror(title="Error", message="Not Found, Invalid email/username")
+        email_entry.delete(0,END)
 #-----------------------UI DESIGN-----------------------#
 window = Tk()
 window.title("Password Manager")
