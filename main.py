@@ -5,12 +5,15 @@ BACKGROUND_COLOR = "#ADC4CE"
 BUTTON_COLOR = "#EEE0C9"
 #-----------------------SEARCH FUNCTION-----------------------#
 def search():
+    web = web_entry.get()
+    email = email_entry.get()
     file = pandas.read_csv("data.csv")
-    file_data_frame = pandas.DataFrame(data=file)
+    file_data_frame = pandas.DataFrame(file)
 
-    for (index,row) in file_data_frame:
-        if row.website == web_entry.get() and row.email == email_entry.get():
+    for (index,row) in file_data_frame.iterrows():
+        if row.website == web and row.email == email:
             password_entry.insert(0,row.password)
+        
 
 #-----------------------UI DESIGN-----------------------#
 window = Tk()
@@ -29,7 +32,7 @@ web_label = Label(text="Website:",padx=20,pady=20,bg=BACKGROUND_COLOR)
 web_label.grid(row=1,column=0)
 web_entry = Entry(width=19)
 web_entry.grid(row=1,column=1)
-search_btn = Button(text="Search", bg=BUTTON_COLOR,highlightthickness=0,bd=1,width=16)
+search_btn = Button(text="Search", bg=BUTTON_COLOR,highlightthickness=0,bd=1,width=16,command=search)
 search_btn.grid(row=1,column=2)
 
 #Username
