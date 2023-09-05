@@ -1,10 +1,18 @@
 from tkinter import *
-#-----------------------Colors--------------------------#
+import pandas
+#-----------------------COLORS--------------------------#
 BACKGROUND_COLOR = "#ADC4CE"
 BUTTON_COLOR = "#EEE0C9"
+#-----------------------SEARCH FUNCTION-----------------------#
+def search():
+    file = pandas.read_csv("data.csv")
+    file_data_frame = pandas.DataFrame(data=file)
 
+    for (index,row) in file_data_frame:
+        if row.website == web_entry.get() and row.email == email_entry.get():
+            password_entry.insert(0,row.password)
 
-#-----------------------UI design-----------------------#
+#-----------------------UI DESIGN-----------------------#
 window = Tk()
 window.title("Password Manager")
 window.config(padx=50, pady=50,bg=BACKGROUND_COLOR)
