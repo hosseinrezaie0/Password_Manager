@@ -65,6 +65,11 @@ def password_generator():
         j = random.choice(symbols)
         k = random.randrange(0, length_of_password-1)
         generated_password.insert(k, j)
+    
+    #Convert password to a str
+    result = ''.join(generated_password)
+    password_entry.insert(0,result)
+    pyperclip.copy(text=result)
 
 #-----------------------UI DESIGN-----------------------#
 window = Tk()
