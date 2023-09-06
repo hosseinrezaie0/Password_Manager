@@ -41,7 +41,30 @@ def password_generator():
     numbers = ['1','2','3','4','5','6','7','8','9','0']
 
     symbols = ['!', '@','#', '$','%','^','&','*']
+    #Choose how many of each should be in the password
+    number_of_letters = random.randint(5,8)
+    number_of_numbers = random.randint(1,3)
+    number_of_symbols = random.randint(1,3)
+    length_of_password = number_of_letters + number_of_symbols + number_of_numbers
 
+    #Create strong password randomly
+    generated_password = []
+
+
+    for i in range(0, number_of_letters):
+        j = random.choice(letters)
+        k = random.randrange(0, length_of_password-1)
+        generated_password.insert(k, j)
+
+    for i in range(0, number_of_numbers):
+        j = random.choice(numbers)
+        k = random.randrange(0, length_of_password-1)
+        generated_password.insert(k, j)
+
+    for i in range(0, number_of_symbols):
+        j = random.choice(symbols)
+        k = random.randrange(0, length_of_password-1)
+        generated_password.insert(k, j)
 
 #-----------------------UI DESIGN-----------------------#
 window = Tk()
