@@ -28,6 +28,21 @@ def search():
     elif email not in email_list:
         messagebox.showerror(title="Error", message="Not Found, Invalid email/username")
         email_entry.delete(0,END)
+#-----------------------PASSWORD GENERATOR-----------------------#
+def password_generator():
+    
+
+    password_entry.delete(0,END)
+    #Create lists contain numbers, letters and symbols
+    letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L','M', 'N', 'O', 
+            'P', 'Q', 'R''S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c','e', 'f', 'g', 'h',
+            'j', 'k', 'l', 'm', 'n','p','q','r','s','t','u','v','w','x','y','z']
+
+    numbers = ['1','2','3','4','5','6','7','8','9','0']
+
+    symbols = ['!', '@','#', '$','%','^','&','*']
+
+
 #-----------------------UI DESIGN-----------------------#
 window = Tk()
 window.title("Password Manager")
@@ -60,7 +75,7 @@ password_label.grid(row=3,column=0)
 password_entry = Entry(width=19)
 password_entry.grid(row=3,column=1)
 
-password_btn = Button(text="Generate Password",bg=BUTTON_COLOR,bd=1)
+password_btn = Button(text="Generate Password",bg=BUTTON_COLOR,bd=1,command=password_generator)
 password_btn.grid(row=3,column=2)
 
 add_btn =Button(text="Add", bg=BUTTON_COLOR, width=16,bd=1)
