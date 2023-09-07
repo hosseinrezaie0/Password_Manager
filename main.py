@@ -138,12 +138,15 @@ password_label.grid(row=3,column=0)
 password_entry = Entry(width=19)
 password_entry.grid(row=3,column=1)
 
+#Generate strong password randomly
 password_btn = Button(text="Generate Password",bg=BUTTON_COLOR,bd=1,command=password_generator)
 password_btn.grid(row=3,column=2)
 
+#Save info in the data file
 add_btn =Button(text="Add", bg=BUTTON_COLOR, width=16,bd=1)
 add_btn.grid(row=4,column=1,sticky="we")
 
+#Erase all fields
 erase_btn = Button(text="Erase", bg=BUTTON_COLOR,width=15,bd=1)
 erase_btn.grid(row=4,column=2)
 
