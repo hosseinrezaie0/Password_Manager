@@ -6,7 +6,6 @@ import random
 #-----------------------COLORS--------------------------#
 BACKGROUND_COLOR = "#ADC4CE"
 BUTTON_COLOR = "#EEE0C9"
-
 #-----------------------SEARCH FUNCTION-----------------------#
 def search():
     web = web_entry.get()
@@ -28,6 +27,13 @@ def search():
     elif email not in email_list:
         messagebox.showerror(title="Error", message="Not Found, Invalid email/username")
         email_entry.delete(0,END)
+#-----------------------SAVE PASSWORD -----------------------#
+def save():
+    error = False
+    file = pandas.read_csv("data.csv")
+    file_data_frame = pandas.DataFrame(file)
+
+    
 #-----------------------PASSWORD GENERATOR-----------------------#
 def password_generator():
     
