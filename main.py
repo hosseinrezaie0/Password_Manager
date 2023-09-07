@@ -32,8 +32,37 @@ def save():
     error = False
     file = pandas.read_csv("data.csv")
     file_data_frame = pandas.DataFrame(file)
-
     
+    for (index, row) in file_data_frame.iterrows():
+        if row.website == web_entry.get()and row.email == email_entry.get():
+            error = True
+            n = index
+
+    if web_entry.get() == "" or password_entry.get() == "":
+        messagebox.showerror(title="Error", message="invalid input")
+    elif error == True:
+        change = messagebox.askyesno(title="Error",message="Account already exists. yes to change.")
+        if change:
+            file_data_frame.loc[n, "password"] = password_entry.get()
+            file_data_frame.to_csv("data.csv", index=False)
+        web_entry.delete(0,END)
+        password_entry.delete(0,END)
+        email_entry.delete(0,END)
+    else:
+        is_ok = messagebox.askokcancel(title=web_entry.get(),message=f'''These are the details entered\nEmail: {email_entry.get()}\n Password: {password_entry.get()}\n
+    Is it okay to save?''')
+    if is_ok:
+        data ={
+            "website": [web_entry.get()],
+            "email": [email_entry.get()],
+            "password" : [password_entry.get()],
+        }
+        df = pandas.DataFrame(data=data)
+        with open("data.csv", mode="a") as f:
+            df.to_csv(f, header=False,index=False)
+
+    web_entry.delete(0,END)
+    password_entry.delete(0,END)
 #-----------------------PASSWORD GENERATOR-----------------------#
 def password_generator():
     
