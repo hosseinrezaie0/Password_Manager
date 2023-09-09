@@ -126,7 +126,10 @@ window.title("Password Manager")
 window.config(padx=50, pady=50,bg=BACKGROUND_COLOR)
 
 
-
+#Login screen
+top = Toplevel()
+top.config(bg=BACKGROUND_COLOR,padx=20,pady=20)
+top.geometry("350x200")
 
 
 canavs = Canvas(width=200,height=200,highlightthickness=0,bg=BACKGROUND_COLOR)
@@ -168,5 +171,5 @@ add_btn.grid(row=4,column=1,sticky="we")
 erase_btn = Button(text="Erase", bg=BUTTON_COLOR,width=15,bd=1,command=erase)
 erase_btn.grid(row=4,column=2)
 
-
+window.withdraw()
 window.mainloop()
