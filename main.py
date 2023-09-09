@@ -6,7 +6,7 @@ import random
 #-----------------------COLORS--------------------------#
 BACKGROUND_COLOR = "#ADC4CE"
 BUTTON_COLOR = "#EEE0C9"
-#-----------------------SEARCH FUNCTION-----------------------#
+#-----------------------SEARCH -----------------------#
 def search():
     web = web_entry.get()
     email = email_entry.get()
@@ -105,6 +105,11 @@ def password_generator():
     result = ''.join(generated_password)
     password_entry.insert(0,result)
     pyperclip.copy(text=result)
+#-----------------------UI DESIGN-----------------------#
+def erase():
+    web_entry.delete(0,END)
+    email_entry.delete(0,END)
+    password_entry.delete(0,END)
 
 #-----------------------UI DESIGN-----------------------#
 window = Tk()
@@ -147,7 +152,7 @@ add_btn =Button(text="Add", bg=BUTTON_COLOR, width=16,bd=1)
 add_btn.grid(row=4,column=1,sticky="we")
 
 #Erase all fields
-erase_btn = Button(text="Erase", bg=BUTTON_COLOR,width=15,bd=1)
+erase_btn = Button(text="Erase", bg=BUTTON_COLOR,width=15,bd=1,command=erase)
 erase_btn.grid(row=4,column=2)
 
 
