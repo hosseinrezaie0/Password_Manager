@@ -131,6 +131,24 @@ top = Toplevel()
 top.config(bg=BACKGROUND_COLOR,padx=20,pady=20)
 top.geometry("350x200")
 
+login_label = Label(top,text="PLEASE LOGIN",font="Arial",bg=BACKGROUND_COLOR)
+login_label.grid(row=0,column=1)
+
+login_user_label = Label(top,text="Username:",bg=BACKGROUND_COLOR,pady=10)
+login_user_label.grid(row=1,column=0)
+login_user_entry = Entry(top,show="*")
+login_user_entry.grid(row=1,column=1,columnspan=2)
+
+login_pass_label = Label(top,text="Password:",bg=BACKGROUND_COLOR,pady=10)
+login_pass_label.grid(row=2,column=0)
+login_pass_entry = Entry(top,show="*")
+login_pass_entry.grid(row=2,column=1,columnspan=2)
+
+cancel_btn = Button(top,text="Cancel",bg=BACKGROUND_COLOR,highlightthickness=0,command=cancel)
+cancel_btn.grid(row=3,column=1,sticky="we")
+
+login_btn = Button(top,text="Login",bg=BACKGROUND_COLOR,highlightthickness=0,command=login)
+login_btn.grid(row=3,column=2,sticky="we")
 
 canavs = Canvas(width=200,height=200,highlightthickness=0,bg=BACKGROUND_COLOR)
 photo = PhotoImage(file="logo.png")
