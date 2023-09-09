@@ -76,7 +76,7 @@ def password_generator():
     numbers = ['1','2','3','4','5','6','7','8','9','0']
 
     symbols = ['!', '@','#', '$','%','^','&','*']
-    #Choose how many of each should be in the password
+    #Choose how many of each should be in the password randomly
     number_of_letters = random.randint(5,8)
     number_of_numbers = random.randint(1,3)
     number_of_symbols = random.randint(1,3)
@@ -85,17 +85,19 @@ def password_generator():
     #Create strong password randomly
     generated_password = []
 
-
+    #Add random letter with random index
     for i in range(0, number_of_letters):
         j = random.choice(letters)
         k = random.randrange(0, length_of_password-1)
         generated_password.insert(k, j)
 
+    #Add random number with random index
     for i in range(0, number_of_numbers):
         j = random.choice(numbers)
         k = random.randrange(0, length_of_password-1)
         generated_password.insert(k, j)
 
+    #Add random symbol with random index
     for i in range(0, number_of_symbols):
         j = random.choice(symbols)
         k = random.randrange(0, length_of_password-1)
@@ -103,7 +105,9 @@ def password_generator():
     
     #Convert password to a str
     result = ''.join(generated_password)
+    #Put password in passward entry
     password_entry.insert(0,result)
+    #Copy password automatically
     pyperclip.copy(text=result)
 #-----------------------UI DESIGN-----------------------#
 def erase():
