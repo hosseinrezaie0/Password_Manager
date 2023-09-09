@@ -6,6 +6,11 @@ import random
 #-----------------------COLORS--------------------------#
 BACKGROUND_COLOR = "#ADC4CE"
 BUTTON_COLOR = "#EEE0C9"
+#-----------------------LOGIN -----------------------#
+LOGIN_USERNAME = "NULL"
+LOGIN_PASSWORD = "NULL"
+def login():
+    pass
 #-----------------------SEARCH -----------------------#
 def search():
     web = web_entry.get()
@@ -119,6 +124,10 @@ def erase():
 window = Tk()
 window.title("Password Manager")
 window.config(padx=50, pady=50,bg=BACKGROUND_COLOR)
+
+
+
+
 
 canavs = Canvas(width=200,height=200,highlightthickness=0,bg=BACKGROUND_COLOR)
 photo = PhotoImage(file="logo.png")
