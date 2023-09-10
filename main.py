@@ -16,6 +16,11 @@ def login():
         top.destroy()
     else:
         messagebox.showerror(title="Error",message="Try agian")
+
+# ---------------------------- CANCEL ------------------------------- #
+def cancel():
+    window.destroy()
+    top.destroy()
 #-----------------------SEARCH -----------------------#
 def search():
     web = web_entry.get()
