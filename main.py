@@ -114,8 +114,9 @@ def password_generator():
     password_entry.insert(0,result)
     #Copy password automatically
     pyperclip.copy(text=result)
-#-----------------------UI DESIGN-----------------------#
+#-----------------------ERASE FUNCTION-----------------------#
 def erase():
+    #Delete all the entries
     web_entry.delete(0,END)
     email_entry.delete(0,END)
     password_entry.delete(0,END)
