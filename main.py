@@ -3,21 +3,20 @@ import pandas
 from tkinter import messagebox
 import pyperclip
 import random
-#-----------------------COLORS--------------------------#
+#----------------------COLORS------------------------#
 BACKGROUND_COLOR = "#ADC4CE"
 BUTTON_COLOR = "#EEE0C9"
-#-----------------------LOGIN -----------------------#
+#-----------------------DEFAULT -----------------------#
 LOGIN_USERNAME = "NULL"
 LOGIN_PASSWORD = "NULL"
+#-----------------------LOGIN -----------------------#
 def login():
-
     if LOGIN_PASSWORD == login_pass_entry.get() and LOGIN_USERNAME == login_user_entry.get():
         window.deiconify()
         top.destroy()
     else:
         messagebox.showerror(title="Error",message="Try agian")
-
-# ---------------------------- CANCEL ------------------------------- #
+# -------------------- CANCEL ----------------------- #
 def cancel():
     window.destroy()
     top.destroy()
@@ -138,12 +137,13 @@ window.config(padx=50, pady=50,bg=BACKGROUND_COLOR)
 
 
 #Login screen
+
 top = Toplevel()
 top.config(bg=BACKGROUND_COLOR,padx=20,pady=20)
 top.geometry("350x200")
-
 login_label = Label(top,text="PLEASE LOGIN",font="Arial",bg=BACKGROUND_COLOR)
 login_label.grid(row=0,column=1)
+            
 
 login_user_label = Label(top,text="Username:",bg=BACKGROUND_COLOR,pady=10)
 login_user_label.grid(row=1,column=0)
@@ -161,11 +161,11 @@ cancel_btn.grid(row=3,column=1,sticky="we")
 login_btn = Button(top,text="Login",bg=BACKGROUND_COLOR,highlightthickness=0,command=login)
 login_btn.grid(row=3,column=2,sticky="we")
 
+
+
 canavs = Canvas(width=200,height=200,highlightthickness=0,bg=BACKGROUND_COLOR)
 photo = PhotoImage(file="logo.png")
 canavs.create_image(100,100,image=photo)
-
-
 canavs.grid(row=0,column=1)
 
 #Web
