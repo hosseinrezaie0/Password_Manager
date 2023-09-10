@@ -10,7 +10,12 @@ BUTTON_COLOR = "#EEE0C9"
 LOGIN_USERNAME = "NULL"
 LOGIN_PASSWORD = "NULL"
 def login():
-    pass
+
+    if LOGIN_PASSWORD == login_pass_entry.get() and LOGIN_USERNAME == login_user_entry.get():
+        window.deiconify()
+        top.destroy()
+    else:
+        messagebox.showerror(title="Error",message="Try agian")
 #-----------------------SEARCH -----------------------#
 def search():
     web = web_entry.get()
